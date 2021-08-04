@@ -18,12 +18,13 @@
 #
 
 import datetime, os, time
-import pyautogui as pygu
+import pyautogui as pygu  # imports
 
 opt = 1
 ost = 5
 cui = 0
-cos = 0
+cos = 0  # valores iniciales para el programa
+
 while opt != 0:
     pygu.moveTo(860, 920, .2)
     pygu.mouseDown()
@@ -46,7 +47,7 @@ while opt != 0:
 
     cui = cui + 1
     ost = ost - 1
-    cos = cos + 1
+    cos = cos + 1  # unicamente contadores para los "if" inferiores
 
     if cui == 20:
         pygu.moveTo(1735, 185)
@@ -64,10 +65,10 @@ while opt != 0:
         pygu.moveTo(830, 585, .2)
         pygu.mouseDown()
         pygu.mouseUp()
-        cos = 0
+        cos = 0  # en caso de que las estadisticas aparezcan como "saltar" esto se encargara de saltarlo
 
     tiempo = datetime.datetime.now()
     if tiempo.hour == 8:
         os.system("shutdown /s")  # cambiar el numero de tiempo.hour == () para apagado automatico de la compu
                                   # usando formato horario de 24hr; ejemplo: 5 = 5 am - 20 = 8pm
-                                  # ya esta configurado para apagarse automaticamente a las 5 am
+                                  # ya esta configurado para apagarse automaticamente a las 8 am
